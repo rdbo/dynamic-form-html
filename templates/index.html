@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+	</head>
+
+	<body>
+		<h1>Dynamic Form</h1>
+		<form action="/" method="POST">
+			<div id="my-inputs">
+
+			</div>
+
+			<button type="button" onclick="add_input();">Add</button>
+			<input type="submit" value="Submit">
+		</form>
+
+		{% if largest_num != '' %}
+		<h2>Largest Number: {{ largest_num }}</h2>
+		{% endif %}
+
+		<script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
+		<script type="text/javascript">
+			add_input();
+		</script>
+	</body>
+</html>
